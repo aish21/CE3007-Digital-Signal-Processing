@@ -24,8 +24,10 @@ def fnGenSampledDTMF(seq, Fs, durTone):
     for char in seq:
         n = np.arange(sTime, eTime, 1.0/Fs)
         y1 = 0.5*np.sin(2 * np.pi * DTMF_FREQ[char][0] * n)
-        y2 = 0.5*np.sin(2 * np.pi * DTMF_FREQ[char][0] * n)
+        y2 = 0.5*np.sin(2 * np.pi * DTMF_FREQ[char][1] * n)
         y = np.concatenate((y, y1 + y2))
+        print(DTMF_FREQ[char][0])
+        print(DTMF_FREQ[char][1])
 
     return [n,y]
 
