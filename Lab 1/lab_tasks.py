@@ -139,12 +139,15 @@ def q3_1_b():
         [n, yfloat] = fnGenSampledSinusoid(A, F, Phi, Fs * 1000, sTime, eTime)
         axs[0].plot(n, yfloat)
         axs[0].grid()
+        # axs[0].set_xlim(-5, 5)
         [n, yfloat] = fnGenSampledSinusoid(A, F, Phi, Fs, sTime, eTime)
         axs[1].plot(n, yfloat, 'r--o')
         axs[1].grid()
+        axs[1].set_xlim(-5, 5)
         num_of_samples = np.arange(0, len(n), 1)
         axs[2].stem(num_of_samples, yfloat, 'g', use_line_collection=True)
         axs[2].grid()
+        axs[2].set_xlim(-5, 5)
         plt.show()
         print("##########################################################")
 
@@ -181,8 +184,8 @@ def main():
     # q3_1_a()
     # q3_1_b()
     # q3_2()
-    q3_3()
-    # q3_4()
+    # q3_3()
+    q3_4()
     # q3_5()
 
 
